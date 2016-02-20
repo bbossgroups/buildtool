@@ -369,7 +369,8 @@
 			server [frameworkset-util.jar] -->
 		<echo>update bboss-bigdata.jar</echo>
 		<antcall target="distrib-bigdata-jars">
-		</antcall>
+		</antcall>		
+		<ant dir="${bigdatamonitor}" />
 	</target>
 
 	<target name="distrib-bboss-util-jars" description="distrib-bboss-util-jars">
@@ -1343,6 +1344,7 @@
 		<antcall target="build-bboss-schedule" />
 		<antcall target="build-bboss-plugin-wordpdf" />
 		<antcall target="build-bboss-plugin-hessian" />
+		<antcall target="build-bboss-bigdata" />		
 		<antcall target="move-all-jars" />
 	</target>
 
@@ -1367,7 +1369,8 @@
 			<fileset dir="${bboss-schedule}/distrib" includes="*.jar" />
 			<fileset dir="${bboss-security}/distrib" includes="*.jar" />
 			<fileset dir="${bboss-security-web}/distrib" includes="*.jar" />
-
+			<fileset dir="${bigdata}/distrib" includes="*.jar" />
+			<fileset dir="${bigdatamonitor}/distrib" includes="*.jar" />
 		</copy>
 		<delete dir="${bboss-util}/distrib" />
 		<delete dir="${bboss-persistent}/distrib" />
@@ -1382,6 +1385,9 @@
 		<delete dir="${bboss-plugin-wordpdf}/distrib" />
 		<delete dir="${bboss-plugin-hessian}/distrib" />
 		<delete dir="${bboss-schedule}/distrib" />
+		
+		<delete dir="${bigdata}/distrib" />
+		<delete dir="${bigdatamonitor}/distrib" />
 	</target>
 
 	<target name="afterarchive" description="afterarchive">
