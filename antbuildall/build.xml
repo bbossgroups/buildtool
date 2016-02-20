@@ -1355,7 +1355,7 @@
 
 		<copy todir="${alldistrib}" overwrite="true">
 			<fileset dir="${bboss-util}/distrib" includes="*.jar" />
-			<fileset dir="${bboss-persistent}/distrib" includes="frameworkset-pool.jar" />
+			<fileset dir="${bboss-persistent}/distrib" includes="frameworkset-pool.jar,frameworkset-pool-sources.jar" />
 			<fileset dir="${bboss-taglib}/distrib" includes="*.jar,*.war" />
 			<fileset dir="${bboss-soa}/distrib" includes="*.jar" />
 			<fileset dir="${bboss-mvc}/distrib" includes="*.jar,*.war" />
